@@ -27,3 +27,7 @@ def cadastrar_banco(request):
         valor = valor,
         icone = icone
     )
+    
+    conta.save()
+    
+    return redirect('/perfil/gerenciar')

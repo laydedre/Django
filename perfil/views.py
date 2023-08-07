@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-
+from django.contrib import messages
+from django.contrib.messages import constants
 from perfil.models import Conta
 
 # Create your views here.

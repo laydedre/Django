@@ -31,9 +31,9 @@ class Conta(models.Model):
     
     apelido = models.CharField(max_length=50, blank=False)
     banco =  models.CharField(max_length=2,choices=banco_choises)
-    tipo = models.CharField(max_length=2,choices=tipo_choises)
-    valor = models.FloatField
-    icone = models.ImageField(upload_to='Icone')
+    tipo = models.CharField(max_length=2,choices=tipo_choises, verbose_name= 'Tipo de pessoa')
+    valor = models.FloatField(verbose_name='Valor do depósito')
+    icone = models.ImageField(upload_to='Icone', verbose_name= 'Ícone do banco')
     
     def __str__(self):
         return self.apelido

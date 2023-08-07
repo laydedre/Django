@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+from perfil.models import Conta
 
 # Create your views here.
 
@@ -15,4 +17,13 @@ def cadastrar_banco(request):
     valor = request.POST.get('valor')
     icone = request.POST.get('icone')
     
+    if len(apelido.strip()) == 0 or len(valor.strip()) == 0:
+        return redirect('/perfil/gerenciar')
     
+    conta = Conta(
+        apelido = apelido,
+        banco = banco,
+        tipo = tipo,
+        valor = valor,
+        icone = icone
+    )

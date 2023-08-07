@@ -29,7 +29,7 @@ class Conta(models.Model):
         ('pj', 'Pessoa Juridica'),
     )
     
-    apelido = models.CharField(max_length=50)
+    apelido = models.CharField(max_length=50, blank=False)
     banco =  models.CharField(max_length=2,choices=banco_choises)
     tipo = models.CharField(max_length=2,choices=tipo_choises)
     valor = models.FloatField

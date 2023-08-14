@@ -10,9 +10,9 @@
 {% block 'body' %}
     <br>
     {% if messages %}
-    {% for message in messages %}
-        <div class="alert {{ message.tags }}">{{ message }}</div>
-    {% endfor %}
+        {% for message in messages %}
+            <div class="alert {{ message.tags }}">{{ message }}</div>
+        {% endfor %}
     {% endif %}
     <br>
     <div class="container">

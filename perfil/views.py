@@ -2,11 +2,14 @@ from django.shortcuts import render, redirect
 from perfil.models import Categoria, Conta
 from django.contrib import messages
 from django.contrib.messages import constants
+from .utils import calcula_total
 
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html')
+    contas = Conta.objects.all()
+    saldo_total = calcula_total (contas, 'valor')
+    return render(request, 'home.html', {'contas': contas, 'saldo_total': saldo_total,})
 
 def gerenciar(request):
     contas = Conta.objects.all()

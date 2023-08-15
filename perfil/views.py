@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from perfil.models import Conta
+from perfil.models import Categoria, Conta
 from django.contrib import messages
 from django.contrib.messages import constants
 
@@ -43,4 +43,18 @@ def deletar_banco(request, id):
     conta.delete()
    
     messages.add_message(request, constants.SUCCESS, 'Conta removida com sucesso')
+    return redirect('/perfil/gerenciar/')
+
+def cadastrar_categoria(request):
+    nome = request.POST.get('categoria')
+    essencial = bool(request.POST.get('essencial'))
+
+    categoria = Categoria(
+        categoria=nome,
+        essencial=essencial
+    )
+
+    categoria.save()
+
+    messages.add_message(request, constants.SUCCESS, 'Categoria cadastrada com sucesso')
     return redirect('/perfil/gerenciar/')

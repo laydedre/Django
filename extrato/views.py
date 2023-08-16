@@ -9,7 +9,6 @@ def novo_valor(request):
         contas = Conta.objects.all()
         categorias = Categoria.objects.all()
         return render(request, 'novo_valor.html', {'contas': contas, 'categorias': categorias})
-    
     elif request.method == "POST":
         valor = request.POST.get('valor')
         categoria = request.POST.get('categoria')

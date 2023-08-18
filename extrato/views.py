@@ -1,5 +1,3 @@
-from io import BytesIO
-import os
 from weasyprint import HTML
 from django.http import FileResponse
 from django.contrib.messages import constants
@@ -10,6 +8,8 @@ from extrato.models import Valores
 from perfil.models import Categoria, Conta
 from datetime import datetime
 from django.template.loader import render_to_string
+from io import BytesIO
+import os
 
 def novo_valor(request):
     if request.method == "GET":
@@ -55,7 +55,6 @@ def view_extrato(request):
     contas = Conta.objects.all()
     categorias = Categoria.objects.all()
 
-       
     valores = Valores.objects.filter(data__month=datetime.now().month)
     
     conta_get = request.GET.get('conta')
@@ -65,7 +64,6 @@ def view_extrato(request):
         valores = valores.filter(conta__id=conta_get)
     if categoria_get:
         valores = valores.filter(categoria__id=categoria_get)
- 
 
     return render(request, 'view_extrato.html', {'valores': valores, 'contas': contas, 'categorias': categorias})
 

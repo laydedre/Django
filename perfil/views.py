@@ -4,8 +4,6 @@ from django.contrib import messages
 from django.contrib.messages import constants
 from .utils import calcula_total
 
-
-# Create your views here.
 def home(request):
     contas = Conta.objects.all()
     saldo_total = calcula_total (contas, 'valor')

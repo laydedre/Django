@@ -81,4 +81,4 @@ def exportar_pdf(request):
     path_output.seek(0)
    
 
-    return FileResponse(path_output, filename="extrato.pdf")
+    return FileResponse (path_output, filename="extrato.pdf")

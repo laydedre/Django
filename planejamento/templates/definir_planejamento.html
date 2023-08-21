@@ -27,7 +27,7 @@
                     <tr class="linha">
                         <td>{{categoria}}</td>
                         <td><input type="number" class="form-control" value="{{categoria.valor_planejamento}}" id="valor-categoria-{{categoria.id}}"></td>
-                        <td><button style="width: 100%;" class="botao-secundario">Salvar</button></td>        
+                        <td><button style="width: 100%;" class="botao-secundario" onclick="update_valor_planejamento_categoria({{categoria.id}})">Salvar</button></td>        
                     </tr>
                 {% endfor %}
                

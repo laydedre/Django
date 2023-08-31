@@ -1,10 +1,9 @@
 {% extends 'bases/base.html' %}
-
 {% load static %}
-
 {% block 'head' %}
 
     <link href="{% static 'perfil/css/home.css' %}" rel="stylesheet">
+    <link href="{% static 'perfil/css/gerenciar.css' %}" rel="stylesheet">
 
 {% endblock %}
 
@@ -112,7 +111,10 @@
                         <span class="fonte-destaque">Planejamento</span>
                     </div>
                     <hr class="hr-borda">
-                    <a href="#" class="botao-principal">Definir planejamento</a>
+                    <a href="{% url 'definir_planejamento' %}" class="botao-principal">Definir planejamento</a>
+                
+                    <hr class="hr-borda">
+                    <a href="{% url 'ver_planejamento' %}" class="botao-principal">Ver planejamento</a>
                 </div>
             </div>
             <div class="col-md-8">
@@ -132,6 +134,10 @@
 
                     <hr class="hr-borda">
                     <a href="#" class="botao-principal">Alterar categorias essenciais</a>
+
+                    <div>
+                        <a href="{% url 'home' %}" class="btn btn-secondary">Ir para a Home</a>
+                    </div>
 
                 </div>
             </div>

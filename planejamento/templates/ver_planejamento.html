@@ -18,8 +18,9 @@
             </div>
             <div class="col-md">
                <div class="card">
+                <a style="text-decoration: none; color:black;">
                     {% for categoria in categorias %}
-                        <p>{{categoria}}</p>
+                        <p >{{categoria}}</p>
                         <div>
                         <span style="float: left !important;">R$ {{categoria.total_gasto}}</span>
                         <span style="float: right !important;">R$ {{categoria.valor_planejamento}}</span>
@@ -29,6 +30,7 @@
                         </div>
                         <br>
                     {% endfor %}
+                    </a>
 
                 </div>
             </div>
